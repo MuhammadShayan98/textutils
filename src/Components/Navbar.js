@@ -18,14 +18,9 @@ export const Navbar = (props) => {
                             </li>
                            
                         </ul>
-
-                        <form className="d-flex">
-                            <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
-                            <button className="btn btn-outline-success" type="submit">Search</button>
-                        </form>
-                        <div className={`form-check form-switch mx-5 text-${props.mode === "light" ? "dark" : "light"}`}  >
-                            <input className="form-check-input" type="checkbox" id="flexSwitchCheckDefault" onClick={props.changeMode} />
-                            <label className="form-check-label" forhtml="flexSwitchCheckDefault">{props.mode === "light" ? "Enable Dark Mode" : "Enable Light Mode"}</label>
+                        <div className={`form-check form-switch text-${props.mode === "light" ? "dark" : "light"}`}  >
+                            <input className="form-check-input" type="checkbox" id="box" onClick={props.changeMode} />
+                            <label className="form-check-label" forhtml="box">{props.mode === "light" ? "Enable Dark Mode" : "Enable Light Mode"}</label>
                         </div>
 
                     </div>
