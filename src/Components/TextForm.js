@@ -39,9 +39,7 @@ export const TextForm = (props) => {
 
     const handleCopy = () => {
 
-        let copy = document.getElementById("Box")
-        copy.select();
-        navigator.clipboard.writeText(copy.value)
+        navigator.clipboard.writeText(Text)
         document.getSelection().removeAllRanges();
         props.showAlert("Text Copied!", "success")
 
@@ -79,7 +77,7 @@ export const TextForm = (props) => {
             </div>
             <div className="container my-4" style={{ color: props.mode === "dark" ? "white" : "black" }}>
                 <h2>Summary</h2>
-                <p>{Text.split(" ").filter((element) => { return element.length !== 0 }).length} <strong>Total Words</strong> </p>
+                <p>{Text.split(/\s+/).filter((element) => { return element.length !== 0 }).length} <strong>Total Words</strong> </p>
                 <p>{Text.replace(/\s+/g, "").length} <strong>Total Characters</strong></p>
                 <p>{0.008 * Text.split(" ").filter((element) => { return element.length !== 0 }).length} <strong>Minute read</strong> </p>
                 <h2>Preview</h2>
