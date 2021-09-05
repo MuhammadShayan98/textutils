@@ -67,12 +67,12 @@ export const TextForm = (props) => {
                     <h1 className="mb-4">{props.heading}</h1>
                     <textarea id="Box"  className="form-control" value={Text} onChange={handleonChange} rows="10" style={{ backgroundColor: props.mode === "dark" ? "#343a40" : "white", color: props.mode === "dark" ? "white" : "black" }}></textarea>
                 </div>
-                <button disabled={Text.length === 0} type="button " onClick={handleonClick} className={`btn btn-${props.mode === "light" ? "dark" : "light"} mx-1 my-2`} >Change into UpperCase</button>
-                <button disabled={Text.length === 0} type="button " onClick={handleLoClick} className={`btn btn-${props.mode === "light" ? "dark" : "light"} mx-1 my-2`} >Change into LowerCase</button>
-                <button disabled={Text.length === 0} className={`btn btn-${props.mode === "light" ? "dark" : "light"} mx-1 my-2`} onClick={handleTitleCase}>TitleCase</button>
-                <button disabled={Text.length === 0} className={`btn btn-${props.mode === "light" ? "dark" : "light"} mx-1 my-2`} onClick={handleCopy}>Copy Text </button>
-                <button disabled={Text.length === 0} className={`btn btn-${props.mode === "light" ? "dark" : "light"} mx-1 my-2`} onClick={handleExtraSpaces}>Remove Extra Space</button>
-                <button disabled={Text.length === 0} className={`btn btn-${props.mode === "light" ? "dark" : "light"} mx-1 my-2`} onClick={handleClear} >Clear Text</button>
+                <button disabled={Text.split(/\s+/).filter((element) => { return element.length === 0 }).length} type="button " onClick={handleonClick} className={`btn btn-${props.mode === "light" ? "dark" : "light"} mx-1 my-2`} >Change into UpperCase</button>
+                <button disabled={Text.split(/\s+/).filter((element) => { return element.length === 0 }).length} type="button " onClick={handleLoClick} className={`btn btn-${props.mode === "light" ? "dark" : "light"} mx-1 my-2`} >Change into LowerCase</button>
+                <button disabled={Text.split(/\s+/).filter((element) => { return element.length === 0 }).length} className={`btn btn-${props.mode === "light" ? "dark" : "light"} mx-1 my-2`} onClick={handleTitleCase}>TitleCase</button>
+                <button disabled={Text.split(/\s+/).filter((element) => { return element.length === 0 }).length} className={`btn btn-${props.mode === "light" ? "dark" : "light"} mx-1 my-2`} onClick={handleCopy}>Copy Text </button>
+                <button disabled={Text.split(/\s+/).filter((element) => { return element.length === 0 }).length} className={`btn btn-${props.mode === "light" ? "dark" : "light"} mx-1 my-2`} onClick={handleExtraSpaces}>Remove Extra Space</button>
+                <button disabled={Text.split(/\s+/).filter((element) => { return element.length === 0 }).length} className={`btn btn-${props.mode === "light" ? "dark" : "light"} mx-1 my-2`} onClick={handleClear} >Clear Text</button>
 
             </div>
             <div className="container my-4" style={{ color: props.mode === "dark" ? "white" : "black" }}>
